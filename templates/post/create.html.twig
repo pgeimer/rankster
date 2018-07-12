@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Post | Rankster{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Create Post</h1>
+
+    {{ form_start(form, {method: 'POST'}) }}
+    {#  instead of displaying form fields one by one, you can also display them
+        all with their default options and styles just by calling to this function:
+        {{ form_widget(form) }}
+    #}
+
+    <fieldset>
+        {# Render any global form error (e.g. when a constraint on a public getter method failed) #}
+        {{ form_errors(form) }}
+
+        <div class="form-group {% if not form.content.vars.valid %}has-error{% endif %}">
+            {{ form_label(form.content, 'Content', {label_attr: {class: 'hidden'}}) }}
+
+            {# Render any errors for the "content" field (e.g. when a class property constraint failed) #}
+            {{ form_errors(form.content) }}
+
+            {{ form_widget(form.content, {attr: {rows: 10, class: 'form-control'}}) }}
+            {{ form_help(form.content) }}
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary pull-right" type="submit">
+                Save
+            </button>
+        </div>
+    </fieldset>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
