@@ -16,16 +16,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class PostController extends Controller
 {
     /**
-     * @Route("/", name="post_index")
-     */
-    public function index()
-    {
-        return $this->render('post/index.html.twig', [
-            'controller_name' => 'PostController',
-        ]);
-    }
-
-    /**
      * Create new post
      *
      * @Route("/create", name="post_create")
