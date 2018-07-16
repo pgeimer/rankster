@@ -20,7 +20,6 @@ class IndexController extends Controller
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)
             ->findAllOrderByVotesSum();
-        //$em = $this->getDoctrine()->getManager();
 
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
