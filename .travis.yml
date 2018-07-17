@@ -3,6 +3,12 @@ language: php
 php:
   - '7.2'
 
+cache:
+  directories:
+    - bin
+    - vendor
+    - $HOME/.composer/cache
+
 install:
   - composer install
 
