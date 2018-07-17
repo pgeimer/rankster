@@ -1,16 +1,16 @@
 language: php
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
 
 php:
   - '7.2'
 
-cache:
-  directories:
-    - bin
-    - vendor
-    - $HOME/.composer/cache
-
 install:
   - composer install
+  - ./vendor/bin/simple-phpunit install
 
 script:
-  - bin/phpunit
+  - ./vendor/bin/simple-phpunit
